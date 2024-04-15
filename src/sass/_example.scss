@@ -1,11 +1,11 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  max-width: 960px;
+  font-size: 16px;  
   padding: 15px;
   background-color: #effefa;
   color: #023131;
+  margin: 0 auto;
 }
 .search-form {  
     position: fixed;
@@ -27,9 +27,10 @@ body {
     }
 
     & button {
-      display: flex;
-      
+      display: flex;            
       border: 3px solid #0d625e;
+      color: #0d625e;
+      
 
       & img {
         margin-right: 2px;
@@ -37,24 +38,25 @@ body {
         height: 20px;
         fill: #0d625e;            
       }
-    }
-  
+    }  
+}
+.search-form button:hover {
+  background-color: #0d625e;
+  color:#58f0dc;
 }
 
 .gallery {
-  padding-top: 100px;
+  padding: 100px 40px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 15px;   
 }
 
 .photo-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
   max-width: 390px;
   align-items: center;
   margin-left: auto;
@@ -89,4 +91,24 @@ img {
   margin-bottom: 0;
   margin-right: 28px;
   align-items: center;
+}
+
+.load-more {
+  position: relative;
+  display: none;
+  margin: 20px auto 100px;
+  padding: 6px 12px;  
+  border: 3px solid #0d625e;
+  color: #0d625e;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: inherit;
+  transition: transform 0.15s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0d625e;
+    color:#58f0dc;
+  }
 }
