@@ -51,10 +51,19 @@ class imageSearcher {
     return response.data;
   }
 
-  onSearchImage(searchName) {
-    this.fetchImages(searchName)
-      .then(this.onResolve.bind(this))
-      .catch(this.onReject.bind(this));
+  // onSearchImage(searchName) {
+  //   this.fetchImages(searchName)
+  //     .then(this.onResolve.bind(this))
+  //     .catch(this.onReject.bind(this));
+  // }
+
+  async onSearchImage(searchName) {
+    try {
+      const data = await this.fetchImages(searchName);
+      this.onResolve(data); 
+    } catch (error) {
+      this.onReject(error);
+    }
   }
 
   onResolve({ total, hits, totalHits }) {
